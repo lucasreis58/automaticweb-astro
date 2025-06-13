@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+    const allPosts = await getCollection('blog');
+    return allPosts.map(entry => ({
+        params: { slug: entry.slug },
+        props: { post: entry },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// ✨ CORREÇÃO AQUI ✨
+// 1. Pega a string 'pubDate' e a transforma em um objeto Date do JavaScript.
+const publicationDate = new Date(post.data.pubDate);
+
+---
+<BaseLayout title={post.data.title}>
+    <div class="container article">
+        <h1>{post.data.title}</h1>
+
+        {/* ✨ MUDANÇA AQUI ✨ */}
+        {/* 2. Usamos a nova variável 'publicationDate' para formatar a data. */}
+        {/* toLocaleDateString('pt-BR', ...) é ainda melhor, pois formata para português! */}
+        <p>
+            Publicado em: {publicationDate.toLocaleDateString('pt-BR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'UTC', // Adicionado para consistência
+      })}
+        </p>
+
+        <hr />
+        <Content />
+    </div>
+</BaseLayout>

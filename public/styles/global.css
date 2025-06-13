@@ -1,0 +1,346 @@
+/* ------------------- */
+/* RESET E VARIÁVEIS   */
+/* ------------------- */
+:root {
+    --primary-color: #00e676; /* Verde vibrante para CTAs e destaques */
+    --primary-color-dark: #00c853;
+    --dark-bg: #1a1a2e; /* Fundo escuro principal */
+    --dark-bg-secondary: #16213e; /* Fundo para seções */
+    --light-text: #e0e0e0;
+    --title-text: #ffffff;
+    --border-color: #0f3460;
+    --error-color: #ff5252;
+
+    --font-family: 'Poppins', sans-serif;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.6;
+}
+
+/* ------------------- */
+/* COMPONENTES GLOBAIS */
+/* ------------------- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+h1, h2, h3, h4 {
+    color: var(--title-text);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: 3rem; line-height: 1.2; }
+h2 { font-size: 2.5rem; text-align: center; margin-bottom: var(--spacing-lg); }
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+.cta-button, .cta-button-main {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+.cta-button-main {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border: 2px solid var(--primary-color);
+}
+.cta-button-main:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-3px);
+}
+
+/* ------------------- */
+/* CABEÇALHO (HEADER)  */
+/* ------------------- */
+.header {
+    background-color: var(--dark-bg-secondary);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--title-text);
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.nav-menu a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* ------------------- */
+/* SEÇÃO HERO          */
+/* ------------------- */
+.hero {
+    background-color: var(--dark-bg-secondary);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ------------------- */
+/* SEÇÕES DE CONTEÚDO  */
+/* ------------------- */
+.about, .why-n8n {
+    background-color: var(--dark-bg);
+}
+
+.services, .contact {
+    background-color: var(--dark-bg-secondary);
+}
+
+.about .container p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.services-grid, .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card, .benefit-card {
+    background: var(--dark-bg);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover, .benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 230, 118, 0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ------------------- */
+/* FORMULÁRIO DE CONTATO */
+/* ------------------- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--light-text);
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group .error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    display: none; /* Oculto por padrão */
+}
+
+.form-group.error input, .form-group.error textarea {
+    border-color: var(--error-color);
+}
+
+.form-group.error .error-message {
+    display: block; /* Exibido via JS */
+}
+
+/* ------------------- */
+/* RODAPÉ (FOOTER)     */
+/* ------------------- */
+.footer {
+    background-color: var(--dark-bg);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* ------------------- */
+/* RESPONSIVIDADE      */
+/* ------------------- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .header .container {
+        /* Lógica do menu hambúrguer pode ser adicionada aqui se não usar JS */
+        /* Por enquanto, simplificamos */
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        order: 2; /* Coloca o texto abaixo da imagem em mobile */
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: var(--spacing-lg);
+    }
+}
+/* Estilos para vídeos responsivos do YouTube */
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    position: relative;
+    height: 0;
+    margin-bottom: 1.5rem;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}

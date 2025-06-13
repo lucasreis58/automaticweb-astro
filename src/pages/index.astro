@@ -1,0 +1,104 @@
+---
+// Arquivo: src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Automaticweb | Automações Inteligentes com n8n">
+	<section id="inicio" class="hero">
+		<div class="container">
+			<div class="hero-content">
+				<h1 class="hero-title">Transformando Ideias em Automações Inteligentes com n8n</h1>
+				<p class="hero-subtitle">Otimize seus processos, integre suas ferramentas e libere sua equipe para focar no que realmente importa.</p>
+				<a href="#servicos" class="cta-button-main">Descubra Nossos Serviços</a>
+			</div>
+			<div class="hero-image">
+				<img src="/images/hero-image.png" alt="Ilustração de um fluxo de automação com nós e conexões">
+			</div>
+		</div>
+	</section>
+
+	<section id="sobre" class="about">
+		<div class="container">
+			<h2>Quem Somos</h2>
+			<p>A Automaticweb nasceu da paixão por tecnologia e eficiência. Nossa missão é ajudar empresas a desbloquear seu potencial máximo através de automações personalizadas. Somos especialistas em <strong>n8n</strong>, uma ferramenta poderosa que nos permite criar soluções flexíveis e escaláveis para os desafios do seu negócio.</p>
+			<p>Fundada por <strong>Lucas</strong>, um entusiasta da automação, nossa equipe combina conhecimento técnico profundo com uma abordagem focada nas necessidades do cliente.</p>
+		</div>
+	</section>
+
+	<section id="servicos" class="services">
+		<div class="container">
+			<h2>O que Fazemos</h2>
+			<div class="services-grid">
+				<div class="service-card">
+					<div class="service-icon">[Ícone]</div>
+					<h3>Integração de Sistemas</h3>
+					<p>Conectamos suas ferramentas favoritas (CRMs, ERPs, planilhas, etc.) para que trabalhem em perfeita harmonia.</p>
+				</div>
+				<div class="service-card">
+					<div class="service-icon">[Ícone]</div>
+					<h3>Automação de Workflows</h3>
+					<p>Desenvolvemos fluxos de trabalho que automatizam tarefas repetitivas, desde marketing até operações.</p>
+				</div>
+				<div class="service-card">
+					<div class="service-icon">[Ícone]</div>
+					<h3>Consultoria Especializada n8n</h3>
+					<p>Oferecemos orientação estratégica para você extrair o máximo valor da plataforma n8n em seus projetos.</p>
+				</div>
+				<div class="service-card">
+					<div class="service-icon">[Ícone]</div>
+					<h3>Desenvolvimento Personalizado</h3>
+					<p>Criamos nós (nodes) e lógicas customizadas em n8n para atender a requisitos únicos do seu negócio.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="why-n8n" class="why-n8n">
+		<div class="container">
+			<h2>Por que utilizamos n8n?</h2>
+			<div class="benefits-grid">
+				<div class="benefit-card">
+					<h4>Flexibilidade Total</h4>
+					<p>Permite a criação de lógicas complexas e personalizadas, indo muito além dos templates prontos.</p>
+				</div>
+				<div class="benefit-card">
+					<h4>Código Aberto</h4>
+					<p>Garante transparência, segurança e a possibilidade de hospedar em sua própria infraestrutura (self-hosting).</p>
+				</div>
+				<div class="benefit-card">
+					<h4>Escalabilidade</h4>
+					<p>A arquitetura do n8n foi projetada para crescer junto com a sua demanda, de pequenas tarefas a grandes volumes.</p>
+				</div>
+				<div class="benefit-card">
+					<h4>Vasta Biblioteca de Integrações</h4>
+					<p>Conecta-se nativamente com centenas de aplicativos e APIs, e permite criar conexões com qualquer outro.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contato" class="contact">
+		<div class="container">
+			<h2>Vamos Conversar?</h2>
+			<p>Preencha o formulário abaixo e nossa equipe entrará em contato para agendar uma demonstração gratuita.</p>
+			<form id="contact-form" class="contact-form" novalidate>
+				<div class="form-group">
+					<label for="name">Nome</label>
+					<input type="text" id="name" name="name" required>
+					<small class="error-message"></small>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
+					<small class="error-message"></small>
+				</div>
+				<div class="form-group">
+					<label for="message">Sua Mensagem</label>
+					<textarea id="message" name="message" rows="5" required></textarea>
+					<small class="error-message"></small>
+				</div>
+				<button type="submit" class="cta-button-main">Enviar Mensagem</button>
+			</form>
+		</div>
+	</section>
+</BaseLayout>

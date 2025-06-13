@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro'; // Um layout base que você criará
+
+// 1. Pega todos os posts da sua coleção 'blog'
+const allPosts = await getCollection('blog');
+---
+
+<BaseLayout title="Blog da Automaticweb">
+    <div class="container">
+        <h1>Nosso Conteúdo</h1>
+        <p>Artigos e tutoriais para o seu negócio.</p>
+
+        <div class="blog-grid">
+            {allPosts.map(post => (
+                    <a href={/blog/${post.slug}`}>
+                        <div class="card">
+                            <img src={post.data.image} alt={post.data.title} />
+                            <h2>{post.data.title}</h2>
+                            <p>{post.data.description}</p>
+                        </div>
+                    </a>
+            ))}
+        </div>
+    </div>
+</BaseLayout>

@@ -1,0 +1,65 @@
+---
+// Arquivo: src/pages/blog/index.astro
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro'; // Importamos o nosso card
+
+// Pegamos todos os posts, ordenando pelos mais recentes primeiro
+const allPosts = (await getCollection('blog')).sort(
+    (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+---
+
+<BaseLayout title="Blog | Automaticweb">
+    <div class="container">
+        <div class="page-header">
+            <h1>Conteúdo sobre Automação e n8n</h1>
+            <p>Artigos, tutoriais e dicas para otimizar seus processos e escalar seu negócio.</p>
+        </div>
+
+        <div class="blog-grid">
+            {allPosts.map((post) => (
+                    <BlogPostCard post={post} />
+            ))}
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+        font-size: 1.1rem;
+        color: var(--light-text);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .blog-grid {
+        display: grid;
+        /* Define que as colunas terão no mínimo 340px, e se ajustarão para preencher o espaço */
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2rem; /* Espaçamento entre os cards */
+    }
+
+    /* Media query para telas menores */
+    @media (max-width: 400px) {
+        .blog-grid {
+            grid-template-columns: 1fr; /* Em telas muito pequenas, fica uma coluna só */
+        }
+    }
+</style>
