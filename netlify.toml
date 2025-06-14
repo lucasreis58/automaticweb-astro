@@ -1,0 +1,7 @@
+# Arquivo de configuração para a Netlify
+
+[build]
+command = "npm run build"
+
+[build.environment]
+NPM_FLAGS = "--legacy-peer-deps"
