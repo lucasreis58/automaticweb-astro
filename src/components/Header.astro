@@ -1,15 +1,24 @@
-<header class="header">
-    <div class="container">
-        <a href="#inicio" class="logo">Automaticweb</a>
-        <nav class="nav">
-            <ul class="nav-menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
-        </nav>
-        <a href="#contato" class="cta-button">Fale Conosco</a>
-    </div>
+---
+// Arquivo: src/components/Header.astro
+---
+<header id="header">
+    <nav class="container">
+        <a href="/" class="logo">Automaticweb</a>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="/" class="nav-link">Início</a></li>
+            <li><a href="/#about" class="nav-link">Sobre</a></li>
+            <li><a href="/#services" class="nav-link">Serviços</a></li>
+            <li><a href="/#cases" class="nav-link">Cases</a></li>
+            <li><a href="/blog" class="nav-link">Blog</a></li>
+            <li><a href="/#contact" class="nav-link">Contato</a></li>
+            <li><a href="/#contact" class="btn btn-primary">Solicite um Orçamento</a></li>
+        </ul>
+
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 </header>

@@ -1,105 +1,305 @@
 ---
 // Arquivo: src/pages/index.astro
-// Forçando atualização final
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Automaticweb | Automações Inteligentes com n8n">
-	<section id="inicio" class="hero">
+<BaseLayout title="Automaticweb - Automações Inteligentes com n8n">
+	<section class="hero" id="home">
+		<div class="floating-elements">
+			<div class="floating-element"></div>
+			<div class="floating-element"></div>
+			<div class="floating-element"></div>
+		</div>
+
 		<div class="container">
 			<div class="hero-content">
-				<h1 class="hero-title">Transformando Ideias em Automações Inteligentes com n8n</h1>
-				<p class="hero-subtitle">Otimize seus processos, integre suas ferramentas e libere sua equipe para focar no que realmente importa.</p>
-				<a href="#servicos" class="cta-button-main">Descubra Nossos Serviços</a>
+				<h1>Transformando Ideias em <span>Automações Inteligentes</span> com n8n</h1>
+				<p>Otimize seus processos, integre sistemas e libere o potencial da sua empresa com workflows automatizados e personalizados.</p>
+
+				<div class="hero-buttons">
+					<a href="#services" class="btn btn-primary">Descubra Nossos Serviços</a>
+					<a href="#contact" class="btn btn-secondary">Fale Conosco</a>
+				</div>
 			</div>
-			<div class="hero-image">
-				<img src="/images/hero-image.png" alt="Ilustração de um fluxo de automação com nós e conexões">
+		</div>
+
+		<div class="hero-image"></div>
+	</section>
+
+	<section class="about" id="about">
+		<div class="container">
+			<div class="about-content">
+				<div class="about-text">
+					<h2>Quem Somos</h2>
+					<p>A Automaticweb é uma empresa especializada em transformação digital através de automações inteligentes. Nossa missão é simplificar processos complexos e impulsionar a produtividade das empresas.</p>
+					<p>Com expertise profunda em n8n, criamos soluções sob medida que conectam suas ferramentas favoritas, eliminam tarefas repetitivas e liberam sua equipe para focar no que realmente importa.</p>
+
+					<div class="about-features">
+						<div class="feature-item">
+							<div class="feature-icon">🚀</div>
+							<div>
+								<h4>Agilidade</h4>
+								<p>Implementação rápida e eficiente</p>
+							</div>
+						</div>
+						<div class="feature-item">
+							<div class="feature-icon">🔧</div>
+							<div>
+								<h4>Personalização</h4>
+								<p>Soluções adaptadas ao seu negócio</p>
+							</div>
+						</div>
+						<div class="feature-item">
+							<div class="feature-icon">📈</div>
+							<div>
+								<h4>Resultados</h4>
+								<p>ROI comprovado e métricas claras</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="about-image">
+					<div class="about-image-wrapper">
+						<div style="width: 500px; height: 400px; background: var(--gradient-accent); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+							🤖
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="sobre" class="about">
+	<section class="services" id="services">
 		<div class="container">
-			<h2>Quem Somos</h2>
-			<p>A Automaticweb nasceu da paixão por tecnologia e eficiência. Nossa missão é ajudar empresas a desbloquear seu potencial máximo através de automações personalizadas. Somos especialistas em <strong>n8n</strong>, uma ferramenta poderosa que nos permite criar soluções flexíveis e escaláveis para os desafios do seu negócio.</p>
-			<p>Fundada por <strong>Lucas</strong>, um entusiasta da automação, nossa equipe combina conhecimento técnico profundo com uma abordagem focada nas necessidades do cliente.</p>
-		</div>
-	</section>
+			<h2 class="section-title">Nossos Serviços</h2>
 
-	<section id="servicos" class="services">
-		<div class="container">
-			<h2>O que Fazemos</h2>
 			<div class="services-grid">
 				<div class="service-card">
-					<div class="service-icon">[Ícone]</div>
+					<div class="service-icon">🔗</div>
 					<h3>Integração de Sistemas</h3>
-					<p>Conectamos suas ferramentas favoritas (CRMs, ERPs, planilhas, etc.) para que trabalhem em perfeita harmonia.</p>
+					<p>Conectamos todas as suas ferramentas e plataformas em um ecossistema unificado, eliminando silos de dados e melhorando a comunicação entre sistemas.</p>
 				</div>
+
 				<div class="service-card">
-					<div class="service-icon">[Ícone]</div>
+					<div class="service-icon">⚡</div>
 					<h3>Automação de Workflows</h3>
-					<p>Desenvolvemos fluxos de trabalho que automatizam tarefas repetitivas, desde marketing até operações.</p>
+					<p>Criamos fluxos de trabalho automatizados que executam tarefas complexas sem intervenção manual, aumentando eficiência e reduzindo erros.</p>
 				</div>
+
 				<div class="service-card">
-					<div class="service-icon">[Ícone]</div>
-					<h3>Consultoria Especializada n8n</h3>
-					<p>Oferecemos orientação estratégica para você extrair o máximo valor da plataforma n8n em seus projetos.</p>
+					<div class="service-icon">💡</div>
+					<h3>Consultoria n8n</h3>
+					<p>Orientamos sua equipe na implementação e otimização do n8n, compartilhando melhores práticas e estratégias avançadas.</p>
 				</div>
+
 				<div class="service-card">
-					<div class="service-icon">[Ícone]</div>
-					<h3>Desenvolvimento Personalizado</h3>
-					<p>Criamos nós (nodes) e lógicas customizadas em n8n para atender a requisitos únicos do seu negócio.</p>
+					<div class="service-icon">🎯</div>
+					<h3>Workflows Personalizados</h3>
+					<p>Desenvolvemos automações sob medida que se alinham perfeitamente aos seus processos de negócio únicos e objetivos específicos.</p>
+				</div>
+
+				<div class="service-card">
+					<div class="service-icon">📊</div>
+					<h3>Análise e Otimização</h3>
+					<p>Monitoramos e refinamos continuamente suas automações para garantir máxima performance e ROI.</p>
+				</div>
+
+				<div class="service-card">
+					<div class="service-icon">🛡️</div>
+					<h3>Suporte e Manutenção</h3>
+					<p>Oferecemos suporte contínuo para garantir que suas automações funcionem perfeitamente 24/7.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="why-n8n" class="why-n8n">
+	<section class="why-n8n" id="why-n8n">
 		<div class="container">
-			<h2>Por que utilizamos n8n?</h2>
+			<h2 class="section-title">Por que escolher n8n?</h2>
+
 			<div class="benefits-grid">
 				<div class="benefit-card">
-					<h4>Flexibilidade Total</h4>
-					<p>Permite a criação de lógicas complexas e personalizadas, indo muito além dos templates prontos.</p>
+					<span class="benefit-icon">🔓</span>
+					<h3>Código Aberto</h3>
+					<p>Total transparência e controle sobre suas automações, sem vendor lock-in.</p>
 				</div>
+
 				<div class="benefit-card">
-					<h4>Código Aberto</h4>
-					<p>Garante transparência, segurança e a possibilidade de hospedar em sua própria infraestrutura (self-hosting).</p>
+					<span class="benefit-icon">🔌</span>
+					<h3>+400 Integrações</h3>
+					<p>Conecte-se com praticamente qualquer ferramenta ou API que sua empresa utiliza.</p>
 				</div>
+
 				<div class="benefit-card">
-					<h4>Escalabilidade</h4>
-					<p>A arquitetura do n8n foi projetada para crescer junto com a sua demanda, de pequenas tarefas a grandes volumes.</p>
+					<span class="benefit-icon">📈</span>
+					<h3>Escalabilidade</h3>
+					<p>Cresce com seu negócio, desde automações simples até workflows empresariais complexos.</p>
 				</div>
+
 				<div class="benefit-card">
-					<h4>Vasta Biblioteca de Integrações</h4>
-					<p>Conecta-se nativamente com centenas de aplicativos e APIs, e permite criar conexões com qualquer outro.</p>
+					<span class="benefit-icon">👁️</span>
+					<h3>Interface Visual</h3>
+					<p>Crie e gerencie workflows com interface intuitiva, sem necessidade de programação.</p>
+				</div>
+
+				<div class="benefit-card">
+					<span class="benefit-icon">🔒</span>
+					<h3>Segurança</h3>
+					<p>Mantenha total controle sobre seus dados com opções de self-hosting.</p>
+				</div>
+
+				<div class="benefit-card">
+					<span class="benefit-icon">⚙️</span>
+					<h3>Customização Total</h3>
+					<p>Adapte e estenda funcionalidades conforme suas necessidades específicas.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="contato" class="contact">
+	<section class="cases" id="cases">
 		<div class="container">
-			<h2>Vamos Conversar?</h2>
-			<p>Preencha o formulário abaixo e nossa equipe entrará em contato para agendar uma demonstração gratuita.</p>
-			<form id="contact-form" class="contact-form" novalidate>
-				<div class="form-group">
-					<label for="name">Nome</label>
-					<input type="text" id="name" name="name" required>
-					<small class="error-message"></small>
+			<h2 class="section-title">Cases de Sucesso</h2>
+
+			<div class="cases-container">
+				<div class="case-card">
+					<div class="case-header">
+						<div class="case-logo">EC</div>
+						<div class="case-info">
+							<h3>E-commerce Plus</h3>
+							<p>Varejo Digital</p>
+						</div>
+					</div>
+
+					<div class="case-content">
+						<p>"A Automaticweb revolucionou nossa operação. Automatizamos todo o processo de gestão de pedidos, desde a entrada até a entrega, integrando nossa loja virtual com ERP, logística e atendimento ao cliente."</p>
+					</div>
+
+					<div class="case-results">
+						<div class="result-item">
+							<div class="result-value">85%</div>
+							<div class="result-label">Redução de tempo</div>
+						</div>
+						<div class="result-item">
+							<div class="result-value">3x</div>
+							<div class="result-label">Mais produtividade</div>
+						</div>
+						<div class="result-item">
+							<div class="result-value">99.9%</div>
+							<div class="result-label">Precisão nos processos</div>
+						</div>
+					</div>
 				</div>
-				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" id="email" name="email" required>
-					<small class="error-message"></small>
+
+				<div class="case-card">
+					<div class="case-header">
+						<div class="case-logo">MK</div>
+						<div class="case-info">
+							<h3>Marketing Pro Agency</h3>
+							<p>Agência Digital</p>
+						</div>
+					</div>
+
+					<div class="case-content">
+						<p>"Com as automações da Automaticweb, conseguimos gerenciar campanhas de múltiplos clientes simultaneamente, automatizando relatórios, gestão de leads e comunicação entre equipes."</p>
+					</div>
+
+					<div class="case-results">
+						<div class="result-item">
+							<div class="result-value">20h</div>
+							<div class="result-label">Economizadas/semana</div>
+						</div>
+						<div class="result-item">
+							<div class="result-value">150%</div>
+							<div class="result-label">Aumento de clientes</div>
+						</div>
+						<div class="result-item">
+							<div class="result-value">R$50k</div>
+							<div class="result-label">Economia mensal</div>
+						</div>
+					</div>
 				</div>
-				<div class="form-group">
-					<label for="message">Sua Mensagem</label>
-					<textarea id="message" name="message" rows="5" required></textarea>
-					<small class="error-message"></small>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact" id="contact">
+		<div class="container">
+			<div class="contact-container">
+				<div class="contact-info">
+					<h2>Vamos Automatizar seu Sucesso?</h2>
+					<p>Entre em contato conosco e descubra como podemos transformar seus processos com automações inteligentes.</p>
+
+					<div class="contact-details">
+						<div class="contact-item">
+							<div class="contact-icon">📧</div>
+							<div>
+								<h4>Email</h4>
+								<p>contato@automaticweb.com.br</p>
+							</div>
+						</div>
+
+						<div class="contact-item">
+							<div class="contact-icon">📱</div>
+							<div>
+								<h4>Telefone</h4>
+								<p>(21) 99999-9999</p>
+							</div>
+						</div>
+
+						<div class="contact-item">
+							<div class="contact-icon">📍</div>
+							<div>
+								<h4>Localização</h4>
+								<p>Rio de Janeiro, RJ - Brasil</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="social-links">
+						<a href="#" class="social-link">📘</a>
+						<a href="#" class="social-link">🐦</a>
+						<a href="#" class="social-link">💼</a>
+						<a href="#" class="social-link">📷</a>
+					</div>
 				</div>
-				<button type="submit" class="cta-button-main">Enviar Mensagem</button>
-			</form>
+
+				<form class="contact-form" id="contactForm">
+					<div class="form-group">
+						<label for="name">Nome Completo</label>
+						<input type="text" id="name" name="name" required>
+						<span class="form-error">Por favor, insira seu nome</span>
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required>
+						<span class="form-error">Por favor, insira um email válido</span>
+					</div>
+
+					<div class="form-group">
+						<label for="phone">Telefone</label>
+						<input type="tel" id="phone" name="phone">
+						<span class="form-error">Por favor, insira um telefone válido</span>
+					</div>
+
+					<div class="form-group">
+						<label for="message">Mensagem</label>
+						<textarea id="message" name="message" required></textarea>
+						<span class="form-error">Por favor, insira sua mensagem</span>
+					</div>
+
+					<button type="submit" class="btn btn-primary">
+						<span id="submitText">Enviar Mensagem</span>
+						<span class="loading" id="submitLoading" style="display: none;"></span>
+					</button>
+
+					<div class="success-message" id="successMessage">
+						✅ Mensagem enviada com sucesso! Entraremos em contato em breve.
+					</div>
+				</form>
+			</div>
 		</div>
 	</section>
 </BaseLayout>
