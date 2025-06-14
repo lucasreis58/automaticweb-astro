@@ -1,6 +1,15 @@
 import { defineConfig } from 'astro/config';
+import keystatic from '@keystatic/astro';
+import react from "@astrojs/react";
+import netlify from '@astrojs/netlify';
+//import netlify from "@astrojs/adapter-netlify";
 
-// https://astro.build/config
 export default defineConfig({
-    // Deixe vazio por enquanto
+  // Adiciona esta linha
+  output: 'server',
+
+  //adapter: netlify(), // E esta linha
+  integrations: [keystatic(), react()],
+
+  adapter: netlify()
 });
