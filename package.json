@@ -9,9 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.9.3"
-  },
-  "devDependencies": {
-    "@rollup/plugin-inject": "^5.0.5"
+    "astro": "^5.9.3",
+    "astro-decap-cms": "^0.2.0"
   }
 }
