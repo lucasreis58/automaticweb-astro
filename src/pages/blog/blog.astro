@@ -1,18 +1,25 @@
 ---
+// Arquivo: src/pages/blog/index.astro
 import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro'; // Um layout base que você criará
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
 
-// 1. Pega todos os posts da sua coleção 'blog'
-const allPosts = await getCollection('blog');
+const allPosts = (await getCollection('blog')).sort(
+    (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
 ---
-<BaseLayout title="Blog da Automaticweb">
+
+<BaseLayout title="Blog | Automaticweb">
     <div class="container">
-        <h1>Nosso Conteúdo</h1>
-        <p>Artigos e tutoriais para o seu negócio.</p>
+        <div class="page-header">
+            <h1>Conteúdo sobre Automação e n8n</h1>
+            <p>Artigos, tutoriais e dicas para otimizar seus processos e escalar seu negócio.</p>
+        </div>
 
         <div class="blog-grid">
-            {allPosts.map(post => (
-                    <a href={/blog/${post.slug}`}>
+            {allPosts.map((post) => (
+                // ✨ A CORREÇÃO ESTÁ NA LINHA ABAIXO ✨
+                <a href={`/blog/${post.slug}`}>
                         <div class="card">
                             <img src={post.data.image} alt={post.data.title} />
                             <h2>{post.data.title}</h2>
@@ -23,3 +30,15 @@ const allPosts = await getCollection('blog');
         </div>
     </div>
 </BaseLayout>
+
+<style>
+    /* ... seu CSS continua aqui, ele já estava correto ... */
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .page-header { text-align: center; margin-bottom: 3rem; }
+    .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .page-header p { font-size: 1.1rem; color: var(--light-text); max-width: 600px; margin: 0 auto; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
+    @media (max-width: 400px) {
+        .blog-grid { grid-template-columns: 1fr; }
+    }
+</style>
