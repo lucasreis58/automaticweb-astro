@@ -967,102 +967,125 @@ footer {
 /* ====================================
    Responsividade
    ==================================== */
+/* Responsividade */
 @media (max-width: 768px) {
+    /* Ajustes Gerais */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Cabeçalho e Menu Mobile */
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 65px;
         flex-direction: column;
         background: var(--darker-bg);
         width: 100%;
+        height: calc(100vh - 65px);
         text-align: center;
         transition: left var(--transition-normal);
-        padding: var(--spacing-md);
+        padding: var(--spacing-md) 0;
+        gap: 0;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
     .mobile-menu-toggle {
         display: flex;
+        z-index: 1001;
+    }
+
+    /* Animação do botão "hambúrguer" para "X" */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Seção Hero */
+    .hero {
+        text-align: center;
+        padding-top: 100px;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: clamp(2.2rem, 10vw, 3rem);
     }
 
     .hero p {
         font-size: 1.1rem;
+        padding: 0 1rem;
     }
 
     .hero-buttons {
         flex-direction: column;
+        align-items: center;
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
     }
 
-    .about-content {
+    .hero-image {
+        display: none;
+    }
+
+    /* Seções com Grid */
+    .about-content,
+    .contact-container,
+    .cases-container,
+    .benefits-grid,
+    .services-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .about-text {
         text-align: center;
     }
 
-    .placeholder-image {
-        width: 100%;
-        max-width: 400px;
-        height: 300px;
-        margin: 0 auto;
+    .about-text h2, .contact-info h2 {
+        text-align: center;
     }
 
-    .contact-container {
-        grid-template-columns: 1fr;
+    .about-image {
+        max-width: 100%;
+        overflow: hidden;
     }
 
+    .about-image .about-image-wrapper div {
+        width: 100% !important;
+        height: 250px !important;
+    }
+
+    /* Rodapé */
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: var(--spacing-lg);
     }
 
     .social-links {
         justify-content: center;
-    }
-
-    .cases-container {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .case-results {
-        flex-wrap: wrap;
-    }
-}
-
-/* Smooth scroll para Safari */
-@supports not (scroll-behavior: smooth) {
-    html {
-        scroll-behavior: auto;
-    }
-}
-
-/* Print styles */
-@media print {
-    header,
-    .hero-buttons,
-    .social-links,
-    .contact-form {
-        display: none;
-    }
-
-    body {
-        background: white;
-        color: black;
     }
 }
